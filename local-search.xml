@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Deepmind全能选手&quot;Gato&quot;</title>
+    <link href="/2022/06/21/Deepmind%E5%85%A8%E8%83%BD%E9%80%89%E6%89%8BGato/"/>
+    <url>/2022/06/21/Deepmind%E5%85%A8%E8%83%BD%E9%80%89%E6%89%8BGato/</url>
+    
+    <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote><p>在写文章、画图之后，AI 大模型现在又同时有了打游戏的能力。不禁在想，强AI还远吗？</p></blockquote><p>如果能使用统一的序列模型就能解决所有任务，就能解决很多不必要的麻烦。近日，受大规模语言建模的启发，Deepmind用类似的方法构造了一个通用智能体<strong>Gato</strong>，它具有多模态、多任务、多具身的特点。</p><p>既然是多任务，就需要涉及到不同类型的数据，如何将这些数据“一视同仁”地作为训练数据输入到模型中呢？为了统一处理多模态数据，Deepmind将所有数据序列化为一个扁平的token序列。在此表示中，Gato会根据上下文将token组合成动作、文字、像素等信息。</p><h2 id="训练细节"><a href="#训练细节" class="headerlink" title="训练细节"></a>训练细节</h2><p>在 Gato 的训练阶段，来自不同任务和模态的数据被序列化为扁平的 token 序列，由一个类似于大型语言模型的 transformer 神经网络进行 batch 和其他处理。由于损失被 masked，Gato 只预测动作和文本目标。<br><img src="/img/Gato/pic3.jpg" alt="训练流程"><br>在部署 Gato 时，提示（如演示）被 tokenised，形成了初始序列。接着，环境产生了首个观察结果，该结果也被 tokenised 并添加到序列中。Gato 以自回归的方式对动作向量进行采样，一次只采样一个 token。</p><p>一旦包含动作向量的所有 token 都被采样（由环境的动作规范确定），动作被解码并发送给环境，然后逐步产生新的观察结果。重复这一过程。Gato 模型始终在包含 1024 个 token 的上下文环境窗口内查看之前所有的观察结果和动作。‍下图展示了将 Gato 部署为控制策略（control policy）的流程。<br><img src="/img/Gato/pic4.jpg" alt="训练流程"></p><h2 id="训练难度"><a href="#训练难度" class="headerlink" title="训练难度"></a>训练难度</h2><p>相比有 1750 亿参数的 GPT-3，Gato 要小很多，只有约 12 亿个参数。而且，其建设基础非常简洁，只依赖于一个 Transformer 架构。</p><p>研究人员在将 Gato 与另外两个分别有 7900 万、3.64 亿参数模型的所有基准任务平均分数，进行比较后发现，对于等效的令牌计数，随着规模的增加，AI 性能会显著提高。更大的 Gato 模型可以使用更多数据进行训练，并可能更好地执行各种任务。</p><p>大概这是第一个CV、NLP、RL的结合体？</p><p>see you~</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>深度学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>深度学习</tag>
+      
+      <tag>多模态</tag>
+      
+      <tag>Deepmind</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>三年的蛰伏，以及迟到了七年的FMVP</title>
     <link href="/2022/06/20/first-post/"/>
     <url>/2022/06/20/first-post/</url>
