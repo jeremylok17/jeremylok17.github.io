@@ -16,25 +16,26 @@
   <meta name="author" content="Xubo Luo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目描述给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …, Nj }，其中 1 &lt;&#x3D; i &lt;&#x3D; j &lt;&#x3D; K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。现在增加一个要求，即还需要输出该子序列">
+    <meta name="description" content="题目描述Output the k-th prime number. 输入描述k≤10000 输出描述The k-th prime number. 筛法埃式筛法1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;using">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最大连续子序列">
-<meta property="og:url" content="http://example.com/2022/06/24/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/index.html">
+<meta property="og:title" content="素数筛">
+<meta property="og:url" content="http://example.com/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/index.html">
 <meta property="og:site_name" content="杰瑞米写字的地方">
-<meta property="og:description" content="题目描述给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …, Nj }，其中 1 &lt;&#x3D; i &lt;&#x3D; j &lt;&#x3D; K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。现在增加一个要求，即还需要输出该子序列">
+<meta property="og:description" content="题目描述Output the k-th prime number. 输入描述k≤10000 输出描述The k-th prime number. 筛法埃式筛法1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;using">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%953/pic1.png">
-<meta property="article:published_time" content="2022-06-24T09:02:53.000Z">
-<meta property="article:modified_time" content="2022-06-24T09:15:16.155Z">
+<meta property="og:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%954/pic1.png">
+<meta property="article:published_time" content="2022-06-25T13:37:22.000Z">
+<meta property="article:modified_time" content="2022-06-25T13:42:03.939Z">
 <meta property="article:author" content="Xubo Luo">
-<meta property="article:tag" content="动态规划">
-<meta property="article:tag" content="子序列">
+<meta property="article:tag" content="素数筛选">
+<meta property="article:tag" content="欧拉筛法">
+<meta property="article:tag" content="埃式筛法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%953/pic1.png">
+<meta name="twitter:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%954/pic1.png">
   
   
   
-  <title>最大连续子序列 - 杰瑞米写字的地方</title>
+  <title>素数筛 - 杰瑞米写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="最大连续子序列"></span>
+            <span id="subtitle" data-typed-text="素数筛"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-24 17:02" pubdate>
-          2022年6月24日 下午
+        <time datetime="2022-06-25 21:37" pubdate>
+          2022年6月25日 晚上
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.2k 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          15 分钟
+          10 分钟
         
       </span>
     
@@ -271,23 +272,17 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">最大连续子序列</h1>
+            <h1 style="display: none">素数筛</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …, Nj }，其中 1 &lt;= i &lt;= j &lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。现在增加一个要求，即还需要输出该子序列的第一个和最后一个元素。</p>
-<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><p>测试输入包含若干测试用例，每个测试用例占2行，第1行给出正整数K( K&lt; 10000 )，第2行给出K个整数，中间用空格分隔。当K为0时，输入结束，该用例不被处理。</p>
-<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>对每个测试用例，在1行里输出最大和、最大连续子序列的第一个和最后一个元素，中间用空格分隔。如果最大连续子序列不唯一，则输出序号i和j最小的那个（如输入样例的第2、3组）。若所有K个元素都是负数，则定义其最大和为0，输出整个序列的首尾元素。</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>输入：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">6</span><br><span class="hljs-number">-2</span> <span class="hljs-number">11</span> <span class="hljs-number">-4</span> <span class="hljs-number">13</span> <span class="hljs-number">-5</span> <span class="hljs-number">-2</span><br><span class="hljs-number">10</span><br><span class="hljs-number">-10</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">-5</span> <span class="hljs-number">-23</span> <span class="hljs-number">3</span> <span class="hljs-number">7</span> <span class="hljs-number">-21</span><br><span class="hljs-number">6</span><br><span class="hljs-number">5</span> <span class="hljs-number">-8</span> <span class="hljs-number">3</span> <span class="hljs-number">2</span> <span class="hljs-number">5</span> <span class="hljs-number">0</span><br><span class="hljs-number">1</span><br><span class="hljs-number">10</span><br><span class="hljs-number">3</span><br><span class="hljs-number">-1</span> <span class="hljs-number">-5</span> <span class="hljs-number">-2</span><br><span class="hljs-number">3</span><br><span class="hljs-number">-1</span> <span class="hljs-number">0</span> <span class="hljs-number">-2</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">20</span> <span class="hljs-number">11</span> <span class="hljs-number">13</span><br><span class="hljs-number">10</span> <span class="hljs-number">1</span> <span class="hljs-number">4</span><br><span class="hljs-number">10</span> <span class="hljs-number">3</span> <span class="hljs-number">5</span><br><span class="hljs-number">10</span> <span class="hljs-number">10</span> <span class="hljs-number">10</span><br><span class="hljs-number">0</span> <span class="hljs-number">-1</span> <span class="hljs-number">-2</span><br><span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Output the k-th prime number.</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><p>k≤10000</p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>The k-th prime number.</p>
+<h2 id="筛法"><a href="#筛法" class="headerlink" title="筛法"></a>筛法</h2><h3 id="埃式筛法"><a href="#埃式筛法" class="headerlink" title="埃式筛法"></a>埃式筛法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">10000000</span>;<br><span class="hljs-type">int</span> prime[maxn];<br><span class="hljs-type">bool</span> IsPrime[maxn] = &#123;<span class="hljs-number">0</span>&#125;;<span class="hljs-comment">//0代表都是素数</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Find_Prime</span><span class="hljs-params">()</span></span>&#123;<br>    IsPrime[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//1不是素数</span><br>    <span class="hljs-type">int</span> pNum = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= maxn; i++)&#123;<br>        <span class="hljs-keyword">if</span>(!IsPrime[i])<br>            prime[pNum++] = i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i * i; j &lt;= maxn; j += i)&#123;<br>            IsPrime[j] = <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-built_in">Find_Prime</span>();<br>    <span class="hljs-keyword">while</span>(~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;k))&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, prime[k]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="最大连续子序列和"><a href="#最大连续子序列和" class="headerlink" title="最大连续子序列和"></a>最大连续子序列和</h3><p>递推方程为 dp[i] = max(nums[i], dp[i - 1] + nums[i])。若 dp[i] = nums[i]，说明新起了一段序列；若 dp[i] = dp[i - 1] + nums[i]，说明延续了之前序列。</p>
-<h3 id="找出下标"><a href="#找出下标" class="headerlink" title="找出下标"></a>找出下标</h3><p>如何找到开始下标：在求 dp[i] 的过程中，如果新起了一段序列，那么就说明这是一个潜在的子序列，应该把它的开始下标记录下来。然而，这个子序列并不一定是最大的，因此我们使用变量 t 临时记录该下标，如果等到最后，发现这个子序列是最大的，那才把 t 赋给 firstIndex 作为答案。</p>
-<p>如何找到结束下标：在求 dp[i] 的过程中，如果求得的 dp[i] 把 ans 更新了（意味着该段序列最大），那么就把 i 赋值给 lastIndex 作为答案。<br><img src="/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%953/pic1.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAXN = <span class="hljs-number">10005</span>;<br><br><span class="hljs-type">int</span> nums[MAXN];<br><span class="hljs-type">int</span> dp[MAXN];<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <br>        <span class="hljs-type">bool</span> allNegative = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;nums[i]);<br>            <span class="hljs-keyword">if</span> (nums[i] &gt;= <span class="hljs-number">0</span>) &#123;<br>                allNegative = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (allNegative) &#123;<br>            <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;0 %d %d\n&quot;</span>, nums[<span class="hljs-number">0</span>], nums[n - <span class="hljs-number">1</span>]);<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <br>        dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-type">int</span> ans = dp[<span class="hljs-number">0</span>], firstIndex = <span class="hljs-number">0</span>, lastIndex = <span class="hljs-number">0</span>, t = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &gt; dp[i - <span class="hljs-number">1</span>] + nums[i]) &#123;  <span class="hljs-comment">// 新起一段序列</span><br>                dp[i] = nums[i];<br>                t = i;<br>            &#125; <span class="hljs-keyword">else</span> &#123;  <span class="hljs-comment">// 延长之前序列</span><br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + nums[i];<br>            &#125;<br>            <br>            <span class="hljs-comment">// 如果把ans更新了，才真正找到了满足题意的最大连续子序列</span><br>            <span class="hljs-keyword">if</span> (dp[i] &gt; ans) &#123;<br>                ans = dp[i];<br>                firstIndex = t;<br>                lastIndex = i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d\n&quot;</span>, ans, nums[firstIndex], nums[lastIndex]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="欧拉筛法"><a href="#欧拉筛法" class="headerlink" title="欧拉筛法"></a>欧拉筛法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">10000000</span>;<br><span class="hljs-type">int</span> prime[maxn];<br><span class="hljs-type">bool</span> IsPrime[maxn];<span class="hljs-comment">//0代表都是素数</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Find_Prime</span><span class="hljs-params">()</span></span>&#123;<br>    IsPrime[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//1不是素数</span><br>    <span class="hljs-type">int</span> pNum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= maxn; i++)&#123;<br>        <span class="hljs-keyword">if</span>(!IsPrime[i])&#123;<br>            prime[pNum++] = i;   <br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; pNum &amp;&amp; i * prime[j] &lt;= maxn; j++)&#123;<br>            IsPrime[i * prime[j]] = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-built_in">Find_Prime</span>();<br>    <span class="hljs-keyword">while</span>(~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;k))&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, prime[k - <span class="hljs-number">1</span>]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -320,9 +315,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">#动态规划</a>
+        <a href="/tags/%E7%B4%A0%E6%95%B0%E7%AD%9B%E9%80%89/">#素数筛选</a>
       
-        <a href="/tags/%E5%AD%90%E5%BA%8F%E5%88%97/">#子序列</a>
+        <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/">#欧拉筛法</a>
+      
+        <a href="/tags/%E5%9F%83%E5%BC%8F%E7%AD%9B%E6%B3%95/">#埃式筛法</a>
       
     </div>
   
@@ -334,8 +331,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>最大连续子序列</div>
-      <div>http://example.com/2022/06/24/最大连续子序列/</div>
+      <div>素数筛</div>
+      <div>http://example.com/2022/06/25/素数筛/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +344,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月24日</div>
+          <div>2022年6月25日</div>
         </div>
       
       
@@ -377,18 +374,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/" title="素数筛">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">素数筛</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/24/%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E9%98%B5/" title="最大子矩阵">
-                        <span class="hidden-mobile">最大子矩阵</span>
+                      <a href="/2022/06/24/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" title="最大连续子序列">
+                        <span class="hidden-mobile">最大连续子序列</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
