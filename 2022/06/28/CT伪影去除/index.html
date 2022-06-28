@@ -16,26 +16,26 @@
   <meta name="author" content="Xubo Luo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题目描述Output the k-th prime number. 输入描述k≤10000 输出描述The k-th prime number. 筛法埃式筛法1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;using">
+    <meta name="description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="素数筛">
-<meta property="og:url" content="http://example.com/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/index.html">
+<meta property="og:title" content="CT伪影去除">
+<meta property="og:url" content="http://example.com/2022/06/28/CT%E4%BC%AA%E5%BD%B1%E5%8E%BB%E9%99%A4/index.html">
 <meta property="og:site_name" content="杰瑞米写字的地方">
-<meta property="og:description" content="题目描述Output the k-th prime number. 输入描述k≤10000 输出描述The k-th prime number. 筛法埃式筛法1234567891011121314151617181920212223242526#include &lt;iostream&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;using">
+<meta property="og:description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%954/pic1.png">
-<meta property="article:published_time" content="2022-06-25T13:37:22.000Z">
-<meta property="article:modified_time" content="2022-06-25T13:42:03.939Z">
+<meta property="og:image" content="http://example.com/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
+<meta property="article:published_time" content="2022-06-28T13:54:52.000Z">
+<meta property="article:modified_time" content="2022-06-28T16:09:28.776Z">
 <meta property="article:author" content="Xubo Luo">
-<meta property="article:tag" content="素数筛选">
-<meta property="article:tag" content="欧拉筛法">
-<meta property="article:tag" content="埃式筛法">
+<meta property="article:tag" content="Radon变换">
+<meta property="article:tag" content="阈值分割">
+<meta property="article:tag" content="医学图像处理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%954/pic1.png">
+<meta name="twitter:image" content="http://example.com/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
   
   
   
-  <title>素数筛 - 杰瑞米写字的地方</title>
+  <title>CT伪影去除 - 杰瑞米写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="素数筛"></span>
+            <span id="subtitle" data-typed-text="CT伪影去除"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-25 21:37" pubdate>
-          2022年6月25日 晚上
+        <time datetime="2022-06-28 21:54" pubdate>
+          2022年6月28日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          10 分钟
+          9 分钟
         
       </span>
     
@@ -272,17 +272,24 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">素数筛</h1>
+            <h1 style="display: none">CT伪影去除</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Output the k-th prime number.</p>
-<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><p>k≤10000</p>
-<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>The k-th prime number.</p>
-<h2 id="筛法"><a href="#筛法" class="headerlink" title="筛法"></a>筛法</h2><h3 id="埃式筛法"><a href="#埃式筛法" class="headerlink" title="埃式筛法"></a>埃式筛法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">10000000</span>;<br><span class="hljs-type">int</span> prime[maxn];<br><span class="hljs-type">bool</span> IsPrime[maxn] = &#123;<span class="hljs-number">0</span>&#125;;<span class="hljs-comment">//0代表都是素数</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Find_Prime</span><span class="hljs-params">()</span></span>&#123;<br>    IsPrime[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//1不是素数</span><br>    <span class="hljs-type">int</span> pNum = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= maxn; i++)&#123;<br>        <span class="hljs-keyword">if</span>(!IsPrime[i])<br>            prime[pNum++] = i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i * i; j &lt;= maxn; j += i)&#123;<br>            IsPrime[j] = <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-built_in">Find_Prime</span>();<br>    <span class="hljs-keyword">while</span>(~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;k))&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, prime[k]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="CT图像伪影"><a href="#CT图像伪影" class="headerlink" title="CT图像伪影"></a>CT图像伪影</h2><p>如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="伪影去除"><a href="#伪影去除" class="headerlink" title="伪影去除"></a>伪影去除</h2><p>本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。</p>
+<h3 id="阈值分割"><a href="#阈值分割" class="headerlink" title="阈值分割"></a>阈值分割</h3><p>对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic2.png" srcset="/img/loading.gif" lazyload alt="图A—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic3.png" srcset="/img/loading.gif" lazyload alt="图B—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic4.png" srcset="/img/loading.gif" lazyload alt="图C—原始图像抠掉金属"></p>
+<h3 id="Radon变换"><a href="#Radon变换" class="headerlink" title="Radon变换"></a>Radon变换</h3><p>求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic5.png" srcset="/img/loading.gif" lazyload alt="图RA—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic6.png" srcset="/img/loading.gif" lazyload alt="图RB—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic7.png" srcset="/img/loading.gif" lazyload alt="图RC—原始图像抠掉金属"></p>
+<h3 id="插值校正"><a href="#插值校正" class="headerlink" title="插值校正"></a>插值校正</h3><p>由于图RB就是造成图A伪影的原因。在图RC中去除和图RB相交的部分，此时会留下间隙，间隙使用插值算法进行校正，此时得到图R_RES。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic8.png" srcset="/img/loading.gif" lazyload alt="图R_RES——正弦图的插值校正结果"></p>
+<h3 id="Radon逆变换"><a href="#Radon逆变换" class="headerlink" title="Radon逆变换"></a>Radon逆变换</h3><p>对图R_RES进行Radon的逆变换，得到图D，由于图D中此时缺少金属的信息，因此把图B中的金属部分加到图像D中，得到最终的金属伪影校正图F。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic9.png" srcset="/img/loading.gif" lazyload alt="图D—金属伪影校正图未加上金属"><br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic10.png" srcset="/img/loading.gif" lazyload alt="图F—金属伪影校正图加上金属"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Radon变换的本质是将原来的函数做了一个空间转换，即，将原来的XY平面内的点映射到AB平面上，那么原来在XY平面上的一条直线的所有的点在AB平面上都位于同一点。记录AB平面上的点的积累厚度，便可知XY平面上的线的存在性。通过阈值分割后的结果做Radon变换，然后相减，除去金属伪影产生的”原因“。<br>最近看到中科大周少华教授做的关于伪影去除的成果，mark一下：</p>
+<ol>
+<li>ADN: Artifact disentanglement network for unsupervised metal artifact reduction</li>
+<li>DuDoNet: Dual domain network for CT metal artifact reduction</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] 谷建伟,张丽,陈志强,邢宇翔.CT图像中金属伪影的快速校正[J].中国体视学与图像分析,2005,10(2):108-111<br>[2] Dong B , Li J , Shen Z . X-Ray CT Image Reconstruction via Wavelet Frame Based Regularization and Radon Domain Inpainting[J]. Journal of Scientific Computing, 2013, 54(2-3):333-349.<br>[3] Zhan R ,  Dong B . CT Image Reconstruction by Spatial-Radon Domain Data-Driven Tight Frame\n, Regularization[J]. SIAM Journal on Imaging Sciences, 2016, 9(3).</p>
 
-<h3 id="欧拉筛法"><a href="#欧拉筛法" class="headerlink" title="欧拉筛法"></a>欧拉筛法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">10000000</span>;<br><span class="hljs-type">int</span> prime[maxn];<br><span class="hljs-type">bool</span> IsPrime[maxn];<span class="hljs-comment">//0代表都是素数</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">Find_Prime</span><span class="hljs-params">()</span></span>&#123;<br>    IsPrime[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<span class="hljs-comment">//1不是素数</span><br>    <span class="hljs-type">int</span> pNum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= maxn; i++)&#123;<br>        <span class="hljs-keyword">if</span>(!IsPrime[i])&#123;<br>            prime[pNum++] = i;   <br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; pNum &amp;&amp; i * prime[j] &lt;= maxn; j++)&#123;<br>            IsPrime[i * prime[j]] = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-built_in">Find_Prime</span>();<br>    <span class="hljs-keyword">while</span>(~<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;k))&#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, prime[k - <span class="hljs-number">1</span>]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -300,7 +307,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3/" class="category-chain-item">算法题解</a>
+  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
   
   
 
@@ -315,11 +322,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%B4%A0%E6%95%B0%E7%AD%9B%E9%80%89/">#素数筛选</a>
+        <a href="/tags/Radon%E5%8F%98%E6%8D%A2/">#Radon变换</a>
       
-        <a href="/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B%E6%B3%95/">#欧拉筛法</a>
+        <a href="/tags/%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/">#阈值分割</a>
       
-        <a href="/tags/%E5%9F%83%E5%BC%8F%E7%AD%9B%E6%B3%95/">#埃式筛法</a>
+        <a href="/tags/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">#医学图像处理</a>
       
     </div>
   
@@ -331,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>素数筛</div>
-      <div>http://example.com/2022/06/25/素数筛/</div>
+      <div>CT伪影去除</div>
+      <div>http://example.com/2022/06/28/CT伪影去除/</div>
     </div>
     <div class="license-meta">
       
@@ -344,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月25日</div>
+          <div>2022年6月28日</div>
         </div>
       
       
@@ -374,18 +381,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/28/CT%E4%BC%AA%E5%BD%B1%E5%8E%BB%E9%99%A4/" title="CT伪影去除">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CT伪影去除</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/24/%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%AD%90%E5%BA%8F%E5%88%97/" title="最大连续子序列">
-                        <span class="hidden-mobile">最大连续子序列</span>
+                      <a href="/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/" title="素数筛">
+                        <span class="hidden-mobile">素数筛</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
