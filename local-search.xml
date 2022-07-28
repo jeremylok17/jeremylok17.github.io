@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>视觉导航</title>
+    <link href="/2022/07/28/%E8%A7%86%E8%A7%89%E5%AF%BC%E8%88%AA/"/>
+    <url>/2022/07/28/%E8%A7%86%E8%A7%89%E5%AF%BC%E8%88%AA/</url>
+    
+    <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>视觉导航是利用传感器感知周围环境信息作为飞行器飞行依据的导航技术</p><p><a href="https://paperswithcode.com/task/visual-navigation#:~:text=Visual%20Navigation%20is%20the%20problem%20of%20navigating%20an,of%20actions%2C%20based%20on%20the%20camera%20observations%20only.">Visual Navigation</a> is the problem of navigating an agent, e.g. a mobile robot, in an environment using camera input only.<br>The agent is given a target image (an image it will see from the target position), and its goal is to move from its current position to the target by applying a sequence of actions, based on the camera observations only.</p><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul><li>图像预处理</li><li>目标提取</li><li>目标追踪</li><li>数据融介</li></ul><h2 id="mark几篇文献"><a href="#mark几篇文献" class="headerlink" title="mark几篇文献"></a>mark几篇文献</h2><p>[1] P. Anderson et al., “Vision-and-Language Navigation: Interpreting Visually-Grounded Navigation Instructions in Real Environments,” 2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition, Jun. 2018, doi: 10.1109/cvpr.2018.00387.</p><p>[2] Singh Chaplot, D., Salakhutdinov, R., Gupta, A., &amp; Gupta, S. (2020). Neural Topological SLAM for Visual Navigation. 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). <a href="https://doi.org/10.1109/cvpr42600.2020.01289">https://doi.org/10.1109/cvpr42600.2020.01289</a></p><p>[3] P. Karkus, S. Cai and D. Hsu, “Differentiable SLAM-net: Learning Particle SLAM for Visual Navigation,” 2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021, pp. 2814-2824, doi: 10.1109/CVPR46437.2021.00284.</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>视觉导航</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>视觉导航</tag>
+      
+      <tag>计算机视觉</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>医学图像类别总结</title>
     <link href="/2022/07/18/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E7%B1%BB%E5%88%AB%E6%80%BB%E7%BB%93/"/>
     <url>/2022/07/18/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E7%B1%BB%E5%88%AB%E6%80%BB%E7%BB%93/</url>
