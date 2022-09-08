@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon.png">
-  <link rel="icon" href="/img/icon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/project/img/icon.png">
+  <link rel="icon" href="/project/img/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,11 +19,11 @@
     <meta name="description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CT伪影去除">
-<meta property="og:url" content="http://example.com/2022/06/28/CT%E4%BC%AA%E5%BD%B1%E5%8E%BB%E9%99%A4/index.html">
+<meta property="og:url" content="https://luoxubo.github.io/project/2022/06/28/CT%E4%BC%AA%E5%BD%B1%E5%8E%BB%E9%99%A4/index.html">
 <meta property="og:site_name" content="杰瑞米写字的地方">
 <meta property="og:description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
+<meta property="og:image" content="https://luoxubo.github.io/project/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
 <meta property="article:published_time" content="2022-06-28T13:54:52.000Z">
 <meta property="article:modified_time" content="2022-06-28T16:09:28.776Z">
 <meta property="article:author" content="Xubo Luo">
@@ -31,8 +31,10 @@
 <meta property="article:tag" content="阈值分割">
 <meta property="article:tag" content="医学图像处理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
+<meta name="twitter:image" content="https://luoxubo.github.io/project/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
   
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
   
   <title>CT伪影去除 - 杰瑞米写字的地方</title>
@@ -59,12 +61,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/project/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/project/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/project/css/highlight-dark.css" />
   
 
 
@@ -73,16 +75,31 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"luoxubo.github.io","root":"/project/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/project/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/project/js/utils.js" ></script>
+  <script  src="/project/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -98,7 +115,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/project/">
       <strong>Blog</strong>
     </a>
 
@@ -117,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/project/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -129,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/project/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archive
               </a>
@@ -141,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/project/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Category
               </a>
@@ -153,7 +170,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/project/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tag
               </a>
@@ -165,7 +182,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/project/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -194,7 +211,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/banner1.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/project/img/banner1.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -207,6 +224,11 @@
         
           
   <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Xubo Luo
+      </span>
     
     
       <span class="post-meta">
@@ -241,6 +263,14 @@
 
     
     
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
   </div>
 
 
@@ -274,15 +304,23 @@
             <!-- SEO header -->
             <h1 style="display: none">CT伪影去除</h1>
             
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年6月29日 凌晨
+                  
+                
+              </p>
+            
             
               <div class="markdown-body">
                 
-                <h2 id="CT图像伪影"><a href="#CT图像伪影" class="headerlink" title="CT图像伪影"></a>CT图像伪影</h2><p>如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png" srcset="/img/loading.gif" lazyload></p>
+                <h2 id="CT图像伪影"><a href="#CT图像伪影" class="headerlink" title="CT图像伪影"></a>CT图像伪影</h2><p>如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png" srcset="/project/img/loading.gif" lazyload></p>
 <h2 id="伪影去除"><a href="#伪影去除" class="headerlink" title="伪影去除"></a>伪影去除</h2><p>本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。</p>
-<h3 id="阈值分割"><a href="#阈值分割" class="headerlink" title="阈值分割"></a>阈值分割</h3><p>对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic2.png" srcset="/img/loading.gif" lazyload alt="图A—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic3.png" srcset="/img/loading.gif" lazyload alt="图B—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic4.png" srcset="/img/loading.gif" lazyload alt="图C—原始图像抠掉金属"></p>
-<h3 id="Radon变换"><a href="#Radon变换" class="headerlink" title="Radon变换"></a>Radon变换</h3><p>求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic5.png" srcset="/img/loading.gif" lazyload alt="图RA—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic6.png" srcset="/img/loading.gif" lazyload alt="图RB—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic7.png" srcset="/img/loading.gif" lazyload alt="图RC—原始图像抠掉金属"></p>
-<h3 id="插值校正"><a href="#插值校正" class="headerlink" title="插值校正"></a>插值校正</h3><p>由于图RB就是造成图A伪影的原因。在图RC中去除和图RB相交的部分，此时会留下间隙，间隙使用插值算法进行校正，此时得到图R_RES。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic8.png" srcset="/img/loading.gif" lazyload alt="图R_RES——正弦图的插值校正结果"></p>
-<h3 id="Radon逆变换"><a href="#Radon逆变换" class="headerlink" title="Radon逆变换"></a>Radon逆变换</h3><p>对图R_RES进行Radon的逆变换，得到图D，由于图D中此时缺少金属的信息，因此把图B中的金属部分加到图像D中，得到最终的金属伪影校正图F。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic9.png" srcset="/img/loading.gif" lazyload alt="图D—金属伪影校正图未加上金属"><br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic10.png" srcset="/img/loading.gif" lazyload alt="图F—金属伪影校正图加上金属"></p>
+<h3 id="阈值分割"><a href="#阈值分割" class="headerlink" title="阈值分割"></a>阈值分割</h3><p>对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic2.png" srcset="/project/img/loading.gif" lazyload alt="图A—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic3.png" srcset="/project/img/loading.gif" lazyload alt="图B—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic4.png" srcset="/project/img/loading.gif" lazyload alt="图C—原始图像抠掉金属"></p>
+<h3 id="Radon变换"><a href="#Radon变换" class="headerlink" title="Radon变换"></a>Radon变换</h3><p>求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic5.png" srcset="/project/img/loading.gif" lazyload alt="图RA—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic6.png" srcset="/project/img/loading.gif" lazyload alt="图RB—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic7.png" srcset="/project/img/loading.gif" lazyload alt="图RC—原始图像抠掉金属"></p>
+<h3 id="插值校正"><a href="#插值校正" class="headerlink" title="插值校正"></a>插值校正</h3><p>由于图RB就是造成图A伪影的原因。在图RC中去除和图RB相交的部分，此时会留下间隙，间隙使用插值算法进行校正，此时得到图R_RES。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic8.png" srcset="/project/img/loading.gif" lazyload alt="图R_RES——正弦图的插值校正结果"></p>
+<h3 id="Radon逆变换"><a href="#Radon逆变换" class="headerlink" title="Radon逆变换"></a>Radon逆变换</h3><p>对图R_RES进行Radon的逆变换，得到图D，由于图D中此时缺少金属的信息，因此把图B中的金属部分加到图像D中，得到最终的金属伪影校正图F。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic9.png" srcset="/project/img/loading.gif" lazyload alt="图D—金属伪影校正图未加上金属"><br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic10.png" srcset="/project/img/loading.gif" lazyload alt="图F—金属伪影校正图加上金属"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Radon变换的本质是将原来的函数做了一个空间转换，即，将原来的XY平面内的点映射到AB平面上，那么原来在XY平面上的一条直线的所有的点在AB平面上都位于同一点。记录AB平面上的点的积累厚度，便可知XY平面上的线的存在性。通过阈值分割后的结果做Radon变换，然后相减，除去金属伪影产生的”原因“。<br>最近看到中科大周少华教授做的关于伪影去除的成果，mark一下：</p>
 <ol>
 <li>ADN: Artifact disentanglement network for unsupervised metal artifact reduction</li>
@@ -307,7 +345,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  <a href="/project/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
   
   
 
@@ -322,11 +360,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Radon%E5%8F%98%E6%8D%A2/">#Radon变换</a>
+        <a href="/project/tags/Radon%E5%8F%98%E6%8D%A2/">#Radon变换</a>
       
-        <a href="/tags/%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/">#阈值分割</a>
+        <a href="/project/tags/%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/">#阈值分割</a>
       
-        <a href="/tags/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">#医学图像处理</a>
+        <a href="/project/tags/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">#医学图像处理</a>
       
     </div>
   
@@ -339,7 +377,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>CT伪影去除</div>
-      <div>http://example.com/2022/06/28/CT伪影去除/</div>
+      <div>https://luoxubo.github.io/project/2022/06/28/CT伪影去除/</div>
     </div>
     <div class="license-meta">
       
@@ -381,7 +419,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/10/%E8%BD%AC%EF%BC%9A%E8%87%AA%E5%98%B2%E5%81%9A%E9%A2%98%E5%AE%B6%E7%9A%84%E4%BA%BA%E4%BB%AC%EF%BC%8C%E5%8F%88%E6%9C%89%E5%87%A0%E4%B8%AA%E5%A4%A9%E7%94%9F%E7%88%B1%E5%81%9A%E9%A2%98%E5%91%A2%EF%BC%9F/" title="转：自嘲做题家的人们，又有几个天生爱做题呢？">
+                      <a href="/project/2022/07/10/%E8%BD%AC%EF%BC%9A%E8%87%AA%E5%98%B2%E5%81%9A%E9%A2%98%E5%AE%B6%E7%9A%84%E4%BA%BA%E4%BB%AC%EF%BC%8C%E5%8F%88%E6%9C%89%E5%87%A0%E4%B8%AA%E5%A4%A9%E7%94%9F%E7%88%B1%E5%81%9A%E9%A2%98%E5%91%A2%EF%BC%9F/" title="转：自嘲做题家的人们，又有几个天生爱做题呢？">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">转：自嘲做题家的人们，又有几个天生爱做题呢？</span>
                         <span class="visible-mobile">上一篇</span>
@@ -391,7 +429,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/" title="素数筛">
+                      <a href="/project/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/" title="素数筛">
                         <span class="hidden-mobile">素数筛</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -403,6 +441,12 @@
             </div>
 
             
+  <article id="comments" lazyload>
+    
+
+  </article>
+
+
           </article>
         </div>
       </div>
@@ -492,6 +536,30 @@
     <div class="footer-inner">
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
   
   
 </div>
@@ -514,8 +582,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/project/js/events.js" ></script>
+<script  src="/project/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -537,7 +605,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/project/js/img-lazyload.js" ></script>
   
 
 
@@ -609,7 +677,9 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/project/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -617,7 +687,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/project/js/boot.js" ></script>
 
 
   
