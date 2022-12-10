@@ -16,28 +16,27 @@
   <meta name="author" content="Xubo Luo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
+    <meta name="description" content="《倚天屠龙记》中，张翠山与殷素素穷发十年载归航，一到中原就遇到二师兄俞莲舟，本来是上上之喜。 接着就出了意外：鹤笔翁出手，劫了张无忌，来要挟张翠山。 ——这事恶心在，你如平手相斗，赢了张翠山俞莲舟殷素素，也就罢了；一个大人，厚颜无耻，朝小孩子下手，脸都不要了。 一人做事一人当，冤有头债有主，是不易的至理。明着叫板不过大人，便拿孩子当软肋，朝孩子下手，那可下流极了。 《天龙八部》里，段延庆身为天下第">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CT伪影去除">
-<meta property="og:url" content="https://luoxubo.github.io/2022/06/28/CT%E4%BC%AA%E5%BD%B1%E5%8E%BB%E9%99%A4/index.html">
+<meta property="og:title" content="是何等的恶人，会寻思把孩子当软肋来下手 - 张佳玮">
+<meta property="og:url" content="https://luoxubo.github.io/2022/12/10/hostage/index.html">
 <meta property="og:site_name" content="杰瑞米写字的地方">
-<meta property="og:description" content="CT图像伪影如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图 伪影去除本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。 阈值分割对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。 Radon变换求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC">
+<meta property="og:description" content="《倚天屠龙记》中，张翠山与殷素素穷发十年载归航，一到中原就遇到二师兄俞莲舟，本来是上上之喜。 接着就出了意外：鹤笔翁出手，劫了张无忌，来要挟张翠山。 ——这事恶心在，你如平手相斗，赢了张翠山俞莲舟殷素素，也就罢了；一个大人，厚颜无耻，朝小孩子下手，脸都不要了。 一人做事一人当，冤有头债有主，是不易的至理。明着叫板不过大人，便拿孩子当软肋，朝孩子下手，那可下流极了。 《天龙八部》里，段延庆身为天下第">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://luoxubo.github.io/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
-<meta property="article:published_time" content="2022-06-28T13:54:52.000Z">
-<meta property="article:modified_time" content="2022-06-28T16:09:28.776Z">
+<meta property="og:image" content="https://luoxubo.github.io/img/%E6%9D%82%E8%B0%88/hostage/cat.jpg">
+<meta property="article:published_time" content="2022-12-10T11:00:38.000Z">
+<meta property="article:modified_time" content="2022-12-10T11:06:40.677Z">
 <meta property="article:author" content="Xubo Luo">
-<meta property="article:tag" content="Radon变换">
-<meta property="article:tag" content="阈值分割">
-<meta property="article:tag" content="医学图像处理">
+<meta property="article:tag" content="Humanity">
+<meta property="article:tag" content="基层">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://luoxubo.github.io/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png">
+<meta name="twitter:image" content="https://luoxubo.github.io/img/%E6%9D%82%E8%B0%88/hostage/cat.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>CT伪影去除 - 杰瑞米写字的地方</title>
+  <title>是何等的恶人，会寻思把孩子当软肋来下手 - 张佳玮 - 杰瑞米写字的地方</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CT伪影去除"></span>
+            <span id="subtitle" data-typed-text="是何等的恶人，会寻思把孩子当软肋来下手 - 张佳玮"></span>
           
         </div>
 
@@ -233,8 +232,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-28 21:54" pubdate>
-          2022年6月28日 晚上
+        <time datetime="2022-12-10 19:00" pubdate>
+          2022年12月10日 晚上
         </time>
       </span>
     
@@ -245,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.6k 字
         
       </span>
     
@@ -256,7 +255,7 @@
         
         
         
-          9 分钟
+          14 分钟
         
       </span>
     
@@ -302,12 +301,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CT伪影去除</h1>
+            <h1 style="display: none">是何等的恶人，会寻思把孩子当软肋来下手 - 张佳玮</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：5 个月前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
@@ -315,18 +314,47 @@
             
               <div class="markdown-body">
                 
-                <h2 id="CT图像伪影"><a href="#CT图像伪影" class="headerlink" title="CT图像伪影"></a>CT图像伪影</h2><p>如果CT机性能较差，图像中的金属伪影信息就无法消除，现在高级的CT机都带有金属伪影去除功能。如下图<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic1.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="伪影去除"><a href="#伪影去除" class="headerlink" title="伪影去除"></a>伪影去除</h2><p>本项目采用了阈值分割和基于Radon变换的线性插值相结合的方法，步骤如下。</p>
-<h3 id="阈值分割"><a href="#阈值分割" class="headerlink" title="阈值分割"></a>阈值分割</h3><p>对原始图像（图A）进行阈值分割，把金属图像分割出来，金属图像（图B），抠掉金属的图像（图C）。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic2.png" srcset="/img/loading.gif" lazyload alt="图A—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic3.png" srcset="/img/loading.gif" lazyload alt="图B—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic4.png" srcset="/img/loading.gif" lazyload alt="图C—原始图像抠掉金属"></p>
-<h3 id="Radon变换"><a href="#Radon变换" class="headerlink" title="Radon变换"></a>Radon变换</h3><p>求图像A、图像B和图像C的Radon变换，得到三张正弦图，分别是图RA，图RB，图RC。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic5.png" srcset="/img/loading.gif" lazyload alt="图RA—原始图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic6.png" srcset="/img/loading.gif" lazyload alt="图RB—金属图像"><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic7.png" srcset="/img/loading.gif" lazyload alt="图RC—原始图像抠掉金属"></p>
-<h3 id="插值校正"><a href="#插值校正" class="headerlink" title="插值校正"></a>插值校正</h3><p>由于图RB就是造成图A伪影的原因。在图RC中去除和图RB相交的部分，此时会留下间隙，间隙使用插值算法进行校正，此时得到图R_RES。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic8.png" srcset="/img/loading.gif" lazyload alt="图R_RES——正弦图的插值校正结果"></p>
-<h3 id="Radon逆变换"><a href="#Radon逆变换" class="headerlink" title="Radon逆变换"></a>Radon逆变换</h3><p>对图R_RES进行Radon的逆变换，得到图D，由于图D中此时缺少金属的信息，因此把图B中的金属部分加到图像D中，得到最终的金属伪影校正图F。<br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic9.png" srcset="/img/loading.gif" lazyload alt="图D—金属伪影校正图未加上金属"><br><img src="/img/%E9%A1%B9%E7%9B%AE/%E9%A1%B9%E7%9B%AE1/pic10.png" srcset="/img/loading.gif" lazyload alt="图F—金属伪影校正图加上金属"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Radon变换的本质是将原来的函数做了一个空间转换，即，将原来的XY平面内的点映射到AB平面上，那么原来在XY平面上的一条直线的所有的点在AB平面上都位于同一点。记录AB平面上的点的积累厚度，便可知XY平面上的线的存在性。通过阈值分割后的结果做Radon变换，然后相减，除去金属伪影产生的”原因“。<br>最近看到中科大周少华教授做的关于伪影去除的成果，mark一下：</p>
-<ol>
-<li>ADN: Artifact disentanglement network for unsupervised metal artifact reduction</li>
-<li>DuDoNet: Dual domain network for CT metal artifact reduction</li>
-</ol>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] 谷建伟,张丽,陈志强,邢宇翔.CT图像中金属伪影的快速校正[J].中国体视学与图像分析,2005,10(2):108-111<br>[2] Dong B , Li J , Shen Z . X-Ray CT Image Reconstruction via Wavelet Frame Based Regularization and Radon Domain Inpainting[J]. Journal of Scientific Computing, 2013, 54(2-3):333-349.<br>[3] Zhan R ,  Dong B . CT Image Reconstruction by Spatial-Radon Domain Data-Driven Tight Frame\n, Regularization[J]. SIAM Journal on Imaging Sciences, 2016, 9(3).</p>
+                <p>《倚天屠龙记》中，张翠山与殷素素穷发十年载归航，一到中原就遇到二师兄俞莲舟，本来是上上之喜。</p>
+<p>接着就出了意外：鹤笔翁出手，劫了张无忌，来要挟张翠山。</p>
+<p>——这事恶心在，你如平手相斗，赢了张翠山俞莲舟殷素素，也就罢了；一个大人，厚颜无耻，朝小孩子下手，脸都不要了。</p>
+<p>一人做事一人当，冤有头债有主，是不易的至理。明着叫板不过大人，便拿孩子当软肋，朝孩子下手，那可下流极了。</p>
+<p>《天龙八部》里，段延庆身为天下第一大恶人，要搞段正明和段正淳，于是想出个邪招：把他认为是段正淳家血统的段誉，以及他认为是段誉亲妹子的木婉清，关小黑屋，上阴阳和合散，指望他俩搞在一起……</p>
+<p>这种搞不过人家，于是拿人家儿子女儿耍流氓的事，看着也是变态所为；至于段延庆自己身子残疾，怎么配出阴阳和合散这种变态玩意的，细想也莫可名状。</p>
+<p>不愧是天下第一大恶人，知道的是想谋段正明的位子，不知道的还以为残废久了力不从心，心理变态了呢……</p>
+<p>图片</p>
+<p>当然我们熟悉剧情的，回头一看，自然知道：段誉是段延庆亲儿子，木婉清是段正淳亲女儿。这俩哪怕真有了什么风流韵事，实际上也是不碍的。如此段延庆机关算尽，其实也没啥害处。属于搞伦理剧还没搞对伦理关系，一笑。</p>
+<p>只是您也看到了：这种阴招，也就是天下第一大恶人使得出来。</p>
+<p>不只是下流，而且没了底线。</p>
+<p>底线这玩意一旦越过，就完了。</p>
+<p>比如两个人平手相斗，再怎么使阴耍诈，那还是针对彼此。竞争范围也只限于彼此。</p>
+<p>一旦开始祸害家人，那就防不胜防，牵连旁涉。</p>
+<p>你害我儿子，我害你亲爹；七大姑八大姨，终究都不能免。</p>
+<p>这怎么办？</p>
+<p>比如明朝有位兵部尚书梁廷栋，曾经想辣手，判一个罪人“夷三族”。</p>
+<p>有位叫余大成的，苦口婆心去劝梁尚书：</p>
+<p>我在兵部做郎中，已换了六位尚书，亲眼见到没一个尚书有好下场。你今天开了夷三族的先例，以后自己遇到事怎么办？你顾一下自己的三族罢！</p>
+<p>所以世上各行各业，各有规矩；但再怎么流氓无赖，大概也认同个基本原则：</p>
+<p>祸不及家人，罪不归子女。</p>
+<p>只有最没底线的流氓，才动盘外招，寻思对方子女动手——大概这种人本来就上无父母下无妻儿，又或者索性就是六亲不认的玩意吧。</p>
+<p>但对那些不够强却又想为非作歹的恶人而言，攻击对方家人，实在又有巨大的诱惑力。</p>
+<p>《射雕英雄传》里，灵智上人想抖威风，刚被欧阳锋和周伯通捏着脑后肉瘤当玩具戏耍，自卑感正在爆棚；遇见了黄药师，便开始信口雌黄，说亲眼看到黄蓉已经死了——他的武功，动不了黄药师一根汗毛；但至少可以捏造，可以虚构，可以恫吓。</p>
+<p>黄药师武功绝顶，但黄蓉是他的软肋啊。</p>
+<p>反过来，也只有灵智这种既自卑又弱鸡，还想有点存在感的玩意儿，才会把脑子动到人家家人身上去。都做出这种事了，这辈子也就这点水准了。</p>
+<p>说到这里，免不得说一句：《射雕三部曲》有个小缺点：反派格局，那是一代不如一代。欧阳锋毒辣阴狠，但还知道点脸面；到金轮对付郭靖，就只能绑了郭襄来搞要挟了，毫无高手风范、宗师格调；到了张无忌时代，少林三渡老秃驴已经下流到只能劫谢逊蹲树间，还试图以多打少，可谓格调越来越低。</p>
+<p>所以您也发现了：鹤笔翁劫张无忌，未遂；段延庆劫段誉，未遂；金轮劫郭襄，未遂。</p>
+<p>都知道孩子是软肋，只有坏人会真动心思，朝孩子下手；结果也都无一例外，失败了。</p>
+<p>活该。</p>
+<p>当然咯，总有人觉得自己怪不错的，做这类缺德事也不会遭报。</p>
+<p>《笑傲江湖》里，费彬当着刘正风与曲洋出手，杀了曲洋的孙女曲非烟；惹得一辈子低调隐介藏形的莫大先生出现。</p>
+<p>费彬还得意洋洋，问莫大先生：刘正风该如何处置啊？莫大先生只森然回了两个字：</p>
+<p>“该杀。”</p>
+<p>反手出剑，一套华丽的衡山剑法，把费彬杀了。</p>
+<p>莫大先生一辈子不肯出头，也只在这件事上出了手，这情节设计意味可见：对孩子动手的，该杀。</p>
+<p>当然咯，更多时候，是邪恶反派自己作死。</p>
+<p>《射雕》里，陈玄风荒山大战江南七怪，抓到了郭靖，没当回事，提在手里；却不料六岁的郭靖小小年纪，一剑就刺死了陈玄风。</p>
+<p>——反派总以为孩子好欺负好控制，殊不知孩子们厉害着呢。</p>
+<p>——总想柿子捡软的捏，也难怪心态差，于是总在毫无自信和自信爆棚之间自作自受。</p>
+<p>活该。</p>
 
                 
               </div>
@@ -345,7 +373,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="category-chain-item">项目</a>
+  <a href="/categories/%E6%9D%82%E8%B0%88/" class="category-chain-item">杂谈</a>
   
   
 
@@ -360,11 +388,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Radon%E5%8F%98%E6%8D%A2/">#Radon变换</a>
+        <a href="/tags/Humanity/">#Humanity</a>
       
-        <a href="/tags/%E9%98%88%E5%80%BC%E5%88%86%E5%89%B2/">#阈值分割</a>
-      
-        <a href="/tags/%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">#医学图像处理</a>
+        <a href="/tags/%E5%9F%BA%E5%B1%82/">#基层</a>
       
     </div>
   
@@ -376,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CT伪影去除</div>
-      <div>https://luoxubo.github.io/2022/06/28/CT伪影去除/</div>
+      <div>是何等的恶人，会寻思把孩子当软肋来下手 - 张佳玮</div>
+      <div>https://luoxubo.github.io/2022/12/10/hostage/</div>
     </div>
     <div class="license-meta">
       
@@ -389,7 +415,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月28日</div>
+          <div>2022年12月10日</div>
         </div>
       
       
@@ -419,18 +445,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/10/%E8%BD%AC%EF%BC%9A%E8%87%AA%E5%98%B2%E5%81%9A%E9%A2%98%E5%AE%B6%E7%9A%84%E4%BA%BA%E4%BB%AC%EF%BC%8C%E5%8F%88%E6%9C%89%E5%87%A0%E4%B8%AA%E5%A4%A9%E7%94%9F%E7%88%B1%E5%81%9A%E9%A2%98%E5%91%A2%EF%BC%9F/" title="转：自嘲做题家的人们，又有几个天生爱做题呢？">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">转：自嘲做题家的人们，又有几个天生爱做题呢？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/25/%E7%B4%A0%E6%95%B0%E7%AD%9B/" title="素数筛">
-                        <span class="hidden-mobile">素数筛</span>
+                      <a href="/2022/12/10/MaskedAutoencoder/" title="Masked Autoencoders Are Scalable Vision Learners">
+                        <span class="hidden-mobile">Masked Autoencoders Are Scalable Vision Learners</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
